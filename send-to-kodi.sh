@@ -88,6 +88,11 @@ if [[ -e $input ]]; then
 elif [[ $input =~ ^https?://(www\.)?youtu(\.be/|be\.com/watch\?v=) ]]; then
     url="$ytplugin$(sed 's/.*\(youtu\.be\/\|[&?]v=\)\([a-zA-Z0-9_-]\+\).*/\2/' <<< "$input")"
     
+
+# openload url
+elif [[ $input =~ ^https?://(www\.)?openload.\co ]]; then
+    url="$input"
+
 # Playable formats
 elif [[ $input =~ \.(mp4|mkv|mov|avi|flv|wmv|asf|mp3|flac|mka|m4a|aac|ogg|pls|jpg|png|gif|jpeg|tiff)(\?.*)?$ ]]; then
      url="$input"
